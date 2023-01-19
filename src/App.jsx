@@ -1,5 +1,6 @@
 import { useState } from "react";
 import foodPandaLogoUrl from "./assets/food-panda-logo.png";
+import bruskoffeeLogoUrl from "./assets/bruskoffee-logo.png";
 import "./App.css";
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
   const TAX_RATE = 0.12;
 
   const [status, setStatus] = useState("not submitted");
-  const [grossPrice, setGrossPrice] = useState(0.0);
+  const [grossPrice, setGrossPrice] = useState("");
   const [commission, setCommission] = useState(0.0);
   const [tax, setTax] = useState(0.0);
   const [total, setTotal] = useState(0.0);
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <div className="flex flex-col justify-center items-center min-h-screen">
-      <div>
+      <div className="mt-16">
         <img src={foodPandaLogoUrl} />
       </div>
 
@@ -85,6 +86,10 @@ function App() {
           </>
         )}
       </form>
+
+      <footer className="text-xs mt-auto mb-4 flex flex-col items-center">
+        <img src={bruskoffeeLogoUrl} width="50" />
+      </footer>
     </div>
   );
 }
